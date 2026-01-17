@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // ステートフルウィジェット：状態を持つウィジェット
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class TodoRegister extends StatefulWidget {
+  const TodoRegister({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<TodoRegister> createState() => _TodoRegisterState();
 }
 
-// MyHomePageの状態を管理するクラス
-class _MyHomePageState extends State<MyHomePage> {
+// TodoRegisterの状態を管理するクラス
+class _TodoRegisterState extends State<TodoRegister> {
   @override
   void initState() {
     super.initState();
-    String? apiKey = dotenv.env['API_BASE_URL'];
-    print('API_BASE_URL: $apiKey');
   }
 
   @override
@@ -26,16 +21,13 @@ class _MyHomePageState extends State<MyHomePage> {
       // ヘッダー部分
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text('TODO作成'),
       ),
       // メインコンテンツ：中央揃えで縦方向にテキストとカウンター数字を配置
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            const Text('Hello, Flutteeeeeeeeeer!'),
-          ],
+          children: [const Text('Todo作成ページ')],
         ),
       ),
     );
